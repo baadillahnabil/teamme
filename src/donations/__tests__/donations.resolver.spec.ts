@@ -1,6 +1,6 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { DonationsResolver } from './donations.resolver';
-import { DonationsService } from './donations.service';
+import { DonationsResolver } from '../donations.resolver';
+import { DonationsService } from '../donations.service';
 
 describe('DonationsResolver', () => {
   let resolver: DonationsResolver;
