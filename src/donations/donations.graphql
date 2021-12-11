@@ -1,0 +1,32 @@
+scalar DateTime
+
+type Donation {
+  id: ID!
+  count: Int!
+  displayName: String!
+  email: String!
+  mobilePhone: String
+  team: String
+  message: String
+  isAnonymous: Boolean
+  createdAt: DateTime!
+}
+
+input CreateDonationInput {
+  count: Int!
+  displayName: String!
+  email: String!
+  mobilePhone: String
+  message: String
+  isAnonymous: Boolean
+  createdAt: DateTime!
+}
+
+type Query {
+  donations: [Donation]!
+  donation(id: Int!): Donation
+}
+
+type Mutation {
+  createDonation(createDonationInput: CreateDonationInput!): Donation!
+}

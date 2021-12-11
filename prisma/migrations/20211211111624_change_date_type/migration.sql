@@ -1,0 +1,2 @@
+-- AlterTable
+ALTER TABLE "Donation" ALTER COLUMN "createdAt" SET DATA TYPE TIMESTAMPTZ;
