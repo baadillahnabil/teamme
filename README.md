@@ -1,6 +1,6 @@
 # #TeamMe
 
-> Inspired by [teamseas](teamseas.org) and [teamtrees](teamtrees.org) by Mr. Beast but the donation goes to me! 🤪
+> Inspired by <a href="https://teamseas.org">#teamseas</a> and <a href="https://teamtrees.org">#teamtrees</a> by Mr. Beast but the donation goes to me! 🤪
 
 <br>
 
