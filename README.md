@@ -1,3 +1,16 @@
+# #TeamMe
+
+> Inspired by [teamseas](teamseas.org) and [teamtrees](teamtrees.org) by Mr. Beast but the donation goes to me! 🤪
+
+<br>
+
+Just kidding, this project is about me learning fullstack development using NestJs, GraphQL, Prisma, and PostgresSQL for the database.
+
+<br>
+<hr>
+<br>
+<br>
+
 <p align="center">
   <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo_text.svg" width="320" alt="Nest Logo" /></a>
 </p>
@@ -22,9 +35,13 @@
   <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
   [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
 
+<br>
+
 ## Description
 
 [Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+
+<br>
 
 ## Installation
 
@@ -36,10 +53,7 @@ $ npm install
 
 ```bash
 # development
-$ npm run start
-
-# watch mode
-$ npm run start:dev
+$ npm run dev
 
 # production mode
 $ npm run start:prod
@@ -62,12 +76,7 @@ $ npm run test:cov
 
 Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
 
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
-
+<br>
 ## License
 
 Nest is [MIT licensed](LICENSE).
