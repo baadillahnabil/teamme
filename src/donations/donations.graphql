@@ -17,13 +17,14 @@ input CreateDonationInput {
   displayName: String!
   email: String!
   mobilePhone: String
+  team: String
   message: String
   isAnonymous: Boolean
   createdAt: DateTime!
 }
 
 type Query {
-  donations: [Donation]!
+  donations(sortBy: [String]): [Donation]!
   donation(id: Int!): Donation
 }
 

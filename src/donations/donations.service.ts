@@ -1,5 +1,4 @@
 import { Injectable } from '@nestjs/common';
-import { CreateDonationInput } from './dto/create-donation.input';
 import { PrismaService } from '../../prisma/prisma.service';
 import { Prisma } from '@prisma/client';
 
@@ -7,12 +6,24 @@ import { Prisma } from '@prisma/client';
 export class DonationsService {
   constructor(private prisma: PrismaService) {}
 
-  create(createDonationInput: CreateDonationInput) {
-    return 'This action adds a new donation';
+  create(createDonationInput: Prisma.DonationCreateInput) {
+    return this.prisma.donation.create({ data: createDonationInput });
   }
 
-  findAll() {
-    return this.prisma.donation.findMany();
+  findAll(params?: {
+    sortBy?: (keyof Prisma.DonationOrderByWithRelationInput)[];
+  }) {
+    const { sortBy } = params;
+
+    const orderBy =
+      sortBy &&
+      sortBy.map((value) => {
+        const direction = value.startsWith('-') ? 'desc' : 'asc';
+        const field = value.substring(direction === 'desc' ? 1 : 0);
+        return { [field]: direction };
+      });
+
+    return this.prisma.donation.findMany({ orderBy });
   }
 
   findOne(whereUniqueInput: Prisma.DonationWhereUniqueInput) {

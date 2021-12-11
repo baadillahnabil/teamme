@@ -1,6 +1,6 @@
 import { Resolver, Query, Mutation, Args } from '@nestjs/graphql';
+import { Prisma } from '@prisma/client';
 import { DonationsService } from './donations.service';
-import { CreateDonationInput } from './dto/create-donation.input';
 
 @Resolver('Donation')
 export class DonationsResolver {
@@ -8,14 +8,18 @@ export class DonationsResolver {
 
   @Mutation('createDonation')
   create(
-    @Args('createDonationInput') createDonationInput: CreateDonationInput,
+    @Args('createDonationInput')
+    createDonationInput: Prisma.DonationCreateInput,
   ) {
     return this.donationsService.create(createDonationInput);
   }
 
   @Query('donations')
-  findAll() {
-    return this.donationsService.findAll();
+  findAll(
+    @Args('sortBy')
+    sortBy?: (keyof Prisma.DonationOrderByWithRelationInput)[],
+  ) {
+    return this.donationsService.findAll({ sortBy });
   }
 
   @Query('donation')
