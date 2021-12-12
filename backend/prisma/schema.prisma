@@ -19,6 +19,7 @@ datasource db {
 
 model Donation {
   id          Int      @id @default(autoincrement())
+  /// @Validator.Min(1)
   count       Int
   /// @Validator.MinLength(3)
   displayName String

@@ -26,8 +26,13 @@ input CreateDonationInput {
 type Query {
   donations(sortBy: [String]): [Donation]!
   donation(id: Int!): Donation
+  totalDonations: Int!
 }
 
 type Mutation {
   createDonation(createDonationInput: CreateDonationInput!): Donation!
+}
+
+type Subscription {
+  totalDonations: Int
 }

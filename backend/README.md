@@ -1,16 +1,3 @@
-# #TeamMe
-
-> Inspired by [teamseas](teamseas.org) and [teamtrees](teamtrees.org) by Mr. Beast but the donation goes to me! 🤪
-
-<br>
-
-Just kidding, this project is about me learning fullstack development using NestJs, GraphQL, Prisma, and PostgresSQL for the database.
-
-<br>
-<hr>
-<br>
-<br>
-
 <p align="center">
   <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo_text.svg" width="320" alt="Nest Logo" /></a>
 </p>
