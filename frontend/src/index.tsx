@@ -1,16 +1,45 @@
-import { ColorModeScript } from "@chakra-ui/react"
-import * as React from "react"
-import ReactDOM from "react-dom"
-import { App } from "./App"
-import reportWebVitals from "./reportWebVitals"
-import * as serviceWorker from "./serviceWorker"
+import { ColorModeScript } from '@chakra-ui/react'
+import * as React from 'react'
+import ReactDOM from 'react-dom'
+import { App } from './App'
+import reportWebVitals from './reportWebVitals'
+import * as serviceWorker from './serviceWorker'
+import {
+  createClient,
+  Provider,
+  subscriptionExchange,
+  defaultExchanges,
+} from 'urql'
+import { createClient as createWSClient } from 'graphql-ws'
+
+// for subscription
+const wsClient = createWSClient({
+  url: 'ws://localhost:3001/graphql',
+})
+
+// for query and mutations
+const client = createClient({
+  url: 'http://localhost:3001/graphql',
+  exchanges: [
+    ...defaultExchanges,
+    subscriptionExchange({
+      forwardSubscription: (operation) => ({
+        subscribe: (sink: any) => ({
+          unsubscribe: wsClient.subscribe(operation, sink),
+        }),
+      }),
+    }),
+  ],
+})
 
 ReactDOM.render(
   <React.StrictMode>
     <ColorModeScript />
-    <App />
+    <Provider value={client}>
+      <App />
+    </Provider>
   </React.StrictMode>,
-  document.getElementById("root"),
+  document.getElementById('root')
 )
 
 // If you want your app to work offline and load faster, you can change
